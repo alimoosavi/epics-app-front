@@ -1,26 +1,26 @@
 import * as React from 'react';
-import {getSystemParameters} from "./getSystemParametes.api";
+import {getSystemParameters} from "./getSystemPvs.api";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import AverageTemperatureChart from "./AverageTemperatureChart";
-import PressureChart from "./PressureChart";
+import AverageTemperatureChart from "./averageTemperatureChart";
+import PressureChart from "./pressureChart";
 import Typography from '@material-ui/core/Typography';
 import _ from 'lodash';
-import ChillerLamp from "./ChillerLamp";
+import ChillerLamp from "./chillerLamp";
 
-class ShowSystemParameters extends React.Component {
+class ShowSystemPvs extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {temperatureAverages: [], pressures: [], Chiller: false , time_count: 0 , power_usage_display: 0}
     }
 
+    addTemperatureAverage = (average) => this.setState({temperatureAverages: addItemToChart(average)(this.state.temperatureAverages)})
+    addPressure = (pressure) => this.setState({pressures: addItemToChart(pressure)(this.state.pressures) })
+
     componentDidMount() {
         setInterval(this.getParameters, 5000)
     }
-
-    addTemperatureAverage = (average) => this.setState({temperatureAverages: addItemToChart(average)(this.state.temperatureAverages)})
-    addPressure = (pressure) => this.setState({pressures: addItemToChart(pressure)(this.state.pressures) })
 
     getParameters = async () => {
         try {
@@ -88,4 +88,4 @@ const addItemToChart = (item) => (chartData) => (
 const categories = _.range(20).map(item => String(item))
 const convertNumToBool = (number) => (number == 1);
 
-export default ShowSystemParameters;
+export default ShowSystemPvs;

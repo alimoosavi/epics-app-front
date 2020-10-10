@@ -9,8 +9,15 @@ const AverageTemperatureChart = (props) => (<ReactHighcharts  config={{
     title: {
         text: 'Temperature Average Chart'
     },
-    xAxis: {categories: props.categories},
-    series: [{name: 'temperature average' , data: props.data} , {name: 'upper bound' , data: generateUpperBoundData(props.data.length)}]
+    yAxis: {
+        title: {
+            text: 'kelvin'
+        }
+    },
+    xAxis: {
+        title:{text: 'latest records'},
+        categories: props.categories},
+    series: [{name: 'temperature average' , data: props.data , color: 'green'} , {name: 'upper bound' , data: generateUpperBoundData(props.data.length) , color: 'red'}]
 }}/>)
 
 export default AverageTemperatureChart;

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import ParameterDialog from "./get-initialize-parameters/setInitializeParameters.component";
-import ShowSystemParameters from "./real-time-pvs/showSystemParameters";
+import ParameterDialog from "./get-initialize-parameters/setParameters.component";
+import ShowSystemPvs from "./real-time-pvs/showSystemPvs";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -103,7 +103,7 @@ const App = () => {
                     </Route>
 
                     <Route path="/show-system-parameters">
-                        <ShowSystemParameters />
+                        <ShowSystemPvs />
                     </Route>
 
                     <Route path="/parameters-logs">
