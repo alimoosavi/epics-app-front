@@ -54,7 +54,7 @@ class ShowSystemPvs extends React.Component {
                 <div style={{display: 'flex' , flexDirection: 'row' , width: '100%'}}>
 
                     <div style={{width: '100%'}}>
-                        <ChillerLamp blanking={this.state.Chiller}/>
+                        <ChillerLamp on={this.state.Chiller}/>
                     </div>
 
                     <div style={{width: '100%' , alignItems: 'center' , justifyContent:'center'}}>

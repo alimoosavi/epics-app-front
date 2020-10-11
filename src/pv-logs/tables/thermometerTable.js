@@ -1,13 +1,14 @@
 import * as React from 'react';
 import axiosInstance from "../../axios-instance";
 import PvLogsTable from "./pvLogsTable";
+import {convertTimeStamp} from "../parametersSelector";
 
 
 const columns = [
     {name: 'thermometer_1', title: 'thermometer 1'},
     {name: 'thermometer_2', title: 'thermometer 2'},
     {name: 'thermometer_3', title: 'thermometer 3'},
-    {name: 'time', title: 'time'},
+    {name: 'time', title: 'time', getCellValue: (row) => convertTimeStamp(row.time)},
 ]
 const getPvLogs = async (query) => (await axiosInstance.get('/pv', {params: query})).data;
 

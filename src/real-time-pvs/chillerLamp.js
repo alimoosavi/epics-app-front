@@ -7,11 +7,9 @@ class ChillerLamp extends React.Component {
     render() {
         return (
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-
                 <Typography style={{margin: 15}}>
                     Chiller Alarm
                 </Typography>
-
                 <Card style={{
                     width: 200,
                     height: 200,
@@ -25,14 +23,13 @@ class ChillerLamp extends React.Component {
                 }}>
                     <CardContent>
                         {
-                            this.props.blanking && <div style={{
+                            this.props.on && <div style={{
                                 width: 150,
                                 height: 150,
                                 borderRadius: '100%',
                                 backgroundColor: 'red'
                             }}/>
                         }
-
                     </CardContent>
                 </Card>
             </div>
