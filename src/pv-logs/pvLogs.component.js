@@ -4,7 +4,7 @@ import axiosInstance from "../axios-instance";
 
 import {PressureTable} from "./tables/pressureTable";
 import {ThermometerTable} from "./tables/thermometerTable";
-import {ParametersTable} from "./tables/parametersTable";
+import {SystemPvsTable} from "./tables/systemPvsTable";
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -15,7 +15,7 @@ const getParametersLogs = async () => (await axiosInstance.get('/log/parameters'
 
 export const PressureTab = (selectedParameters) => (<PressureTable parametersId={selectedParameters}/>)
 export const ThermometerTab = (selectedParameters) => (<ThermometerTable parametersId={selectedParameters}/>)
-export const ParametersTab = (selectedParameters) => (<ParametersTable parametersId={selectedParameters}/>)
+export const ParametersTab = (selectedParameters) => (<SystemPvsTable parametersId={selectedParameters}/>)
 
 const ShowSelectedParameters = (props) => (
     <Card style={{
@@ -39,7 +39,7 @@ const ShowSelectedParameters = (props) => (
     </Card>
 )
 
-export default class PvLogsTable extends React.Component {
+export default class PvLogs extends React.Component {
 
     constructor(props) {
         super(props);

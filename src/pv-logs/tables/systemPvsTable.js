@@ -13,6 +13,6 @@ const columns = [
 ]
 const getPvLogs = async (query) => (await axiosInstance.get('/pv', {params: query})).data;
 
-export const ParametersTable = (props) => (
+export const SystemPvsTable = (props) => (
     <PvLogsTable table_type={1} parametersId={props.parametersId} columns={columns} getPvLogs={getPvLogs}/>
 )

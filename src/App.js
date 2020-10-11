@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import PvLogsTable, {ParametersTab, PressureTab, ThermometerTab} from "./pv-logs/pvLogs.component";
+import PvLogs, {ParametersTab, PressureTab, ThermometerTab} from "./pv-logs/pvLogs.component";
 
 import {
     BrowserRouter as Router,
@@ -45,7 +45,7 @@ const MyDrawer = (props) => {
                 <ListItem>
                     <Link to={'/show-system-parameters'} >
                             <span>
-                                show system parameters
+                                real time monitoring
                             </span>
                     </Link>
                 </ListItem>
@@ -54,7 +54,7 @@ const MyDrawer = (props) => {
                 <ListItem>
                     <Link to={'/parameters-logs'} >
                             <span>
-                                parameters logs
+                                system pvs logs
                             </span>
                     </Link>
                 </ListItem>
@@ -107,15 +107,15 @@ const App = () => {
                     </Route>
 
                     <Route path="/parameters-logs">
-                        <PvLogsTable component={ParametersTab}/>
+                        <PvLogs component={ParametersTab}/>
                     </Route>
 
                     <Route path="/pressures-logs">
-                        <PvLogsTable component={PressureTab}/>
+                        <PvLogs component={PressureTab}/>
                     </Route>
 
                     <Route path="/thermometer-logs">
-                        <PvLogsTable component={ThermometerTab}/>
+                        <PvLogs component={ThermometerTab}/>
                     </Route>
                 </Switch>
 

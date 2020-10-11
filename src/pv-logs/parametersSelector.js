@@ -6,11 +6,8 @@ export const convertTimeStamp = (timeStamp) => {
     const date = new Date(timeStamp);
     return `${date.getFullYear()}/${date.getMonth()}/${date.getDay()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
 }
-
 const showParameters = (parameters) => (convertTimeStamp(parameters.time))
-
 class ParametersSelector extends React.Component {
-
 
     handleChange = (event) => this.props.handleChange(Number(event.target.value))
 
