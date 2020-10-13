@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     }
 });
 
-export const parameterNames = ['threshold', 'powerph', 'volume', 'mole'];
+
 
 const ParameterDialog = (props) => {
 
@@ -54,22 +54,54 @@ const ParameterDialog = (props) => {
 
         <div>
             <List>
+                {/*export const parameterNames = ['threshold', 'powerph', 'volume', 'mole'];*/}
+                <>
+                <InputLabel>
+                    threshold (kelvin)
+                </InputLabel>
+                <TextField
+                    type={"number"}
+                    value={parameters.threshold}
+                    onChange={event => setParameter('threshold', event.target.value)}
+                    variant="outlined"
+                />
+                </>
 
-                {parameterNames.map((parameterName) =>
-                    (
-                        <React.Fragment key={parameterName}>
-                            <InputLabel>
-                                {parameterName}
-                            </InputLabel>
-                            <TextField
-                                type={"number"}
-                                value={parameters[parameterName]}
-                                onChange={event => setParameter(parameterName, event.target.value)}
-                                variant="outlined"
-                            />
-                        </React.Fragment>
-                    )
-                )}
+                <>
+                    <InputLabel>
+                        powerph (watt)
+                    </InputLabel>
+                    <TextField
+                        type={"number"}
+                        value={parameters.powerph}
+                        onChange={event => setParameter('powerph', event.target.value)}
+                        variant="outlined"
+                    />
+                </>
+
+                <>
+                    <InputLabel>
+                        volume (cubic meters)
+                    </InputLabel>
+                    <TextField
+                        type={"number"}
+                        value={parameters.volume}
+                        onChange={event => setParameter('volume', event.target.value)}
+                        variant="outlined"
+                    />
+                </>
+
+                <>
+                    <InputLabel>
+                        mole (moles)
+                    </InputLabel>
+                    <TextField
+                        type={"number"}
+                        value={parameters.mole}
+                        onChange={event => setParameter('mole', event.target.value)}
+                        variant="outlined"
+                    />
+                </>
 
             </List>
 

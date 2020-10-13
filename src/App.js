@@ -43,7 +43,7 @@ const MyDrawer = (props) => {
                 </ListItem>
 
                 <ListItem>
-                    <Link to={'/show-system-parameters'} >
+                    <Link to={'/real-time-monitoring'} >
                             <span>
                                 real time monitoring
                             </span>
@@ -52,7 +52,7 @@ const MyDrawer = (props) => {
 
 
                 <ListItem>
-                    <Link to={'/parameters-logs'} >
+                    <Link to={'/pvs-logs'} >
                             <span>
                                 system pvs logs
                             </span>
@@ -102,11 +102,11 @@ const App = () => {
                         <ParameterDialog />
                     </Route>
 
-                    <Route path="/show-system-parameters">
+                    <Route path="/real-time-monitoring">
                         <ShowSystemPvs />
                     </Route>
 
-                    <Route path="/parameters-logs">
+                    <Route path="/pvs-logs">
                         <PvLogs component={ParametersTab}/>
                     </Route>
 

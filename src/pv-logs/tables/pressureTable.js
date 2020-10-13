@@ -34,7 +34,7 @@ const stat_states = [
 ]
 
 const columns = [
-    {name: 'pressure', title: 'pressure'},
+    {name: 'pressure', title: 'pressure (pascal)'},
     {name: 'pressure_stat', title: 'pressure stat' , getCellValue: (row) => stat_states[row.pressure_stat]},
     {name: 'pressure_sevr', title: 'pressure sevr' , getCellValue: (row) => sevr_states[row.pressure_sevr]},
     {name: 'time', title: 'time', getCellValue: (row) => convertTimeStamp(row.time)},
